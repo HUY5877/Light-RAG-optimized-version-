@@ -9,10 +9,13 @@ from lightrag.utils import setup_logger, EmbeddingFunc
 from dotenv import load_dotenv
 load_dotenv()
 WORKING_DIR = "./my_rag_project"
+
+#配置neo4j连接
 os.environ["NEO4J_URI"] = "neo4j://localhost:7687"
 os.environ["NEO4J_USERNAME"] = "neo4j"
 os.environ["NEO4J_PASSWORD"] = "123456789"
 
+#由于要访问open ai的api，所以需要配置代理
 os.environ["https_proxy"] = "http://localhost:7890"
 os.environ["http_proxy"] = "http://localhost:7890"
 
